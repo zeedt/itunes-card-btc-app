@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="modal-body">
+    <div id="tobePassedInput">
+
+    </div>
+    <div id="myInput">
+        <img th:src="${cards.filePath}" class="col-lg-10" />
+    </div>
+    <div th:if="${cardstatus=='PENDING'}">
+    <div id="declineBox">
+        <div id="admdeclineMessage">
+
+        </div>
+        <form method="post" action="javascript: triggerSubmission()" id="admdeclineFormId" enctype="multipart/form-data">
+            <div class="form-group">
+                <textarea name="declineReason" class="form-control" placeholder="Enter description here" id="declineReason" type="text"></textarea>
+                <span class="span"><small><p style="padding-left:10px" id="decReasM"></p></small></span>
+            </div>
+            <div class="form-group">
+                <input name="itunescardDecline" class="form-control-file" placeholder="" id="itunescardDecline" type="file" />
+                <span class="span"><small><p style="padding-left:10px" id="decfileM"></p></small></span>
+            </div>
+            <input type="hidden" id="declineformbutton" onclick="declineform(this.form)" />
+        </form>
+    </div>
+<div class="modal-footer">
+    <div id="verDecButtons">
+        <button type="button" class="btn btn-primary" onclick="verifyCard()" >Verify</button>
+        <button type="button" class="btn btn-danger"  onclick="declineCard()">Decline</button>
+    </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</html>

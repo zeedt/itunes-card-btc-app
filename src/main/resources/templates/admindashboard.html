@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.js" />
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <script type="text/javascript" src="js/dashboardjs.js" />
+    <script type="text/javascript" src="js/admin.js" />
+    <script type="text/javascript" src="js/reloadAdmindash.js" />
+
+</head>
+<body>
+<div class="container" id="dashboardmarg">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">CardUpload</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admindashboard">Dashboard<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/userEnquiry">User enquiry</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminlogout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <audio id="myaudio" src="hangouts_message.ogg" autostart="false" autoplay="false" ></audio>
+    <!--<input th:value="${last}" type="hidden" id="lastFetched" />-->
+    <div id="outerHold" style="visibility: hidden"><div id="lastFetched" th:text="${last}"></div></div>
+    <div class="row">
+        <div class="col-md-12" id="dashboardMargin">
+            <div class="col-lg-8 col-md-10 mx-auto" id="dashboardBody">
+                <h5 style="padding: 20px">Pending verification cards</h5>
+                <div id="CardDetails" >
+                <div class="card mb-3 cardMargin" th:each="card:${usercard}" >
+                    <div class="card-block">
+                        <h6 class="card-title">Card description
+                            &nbsp;&nbsp;&nbsp;&nbsp;<small class="text-muted" th:text="|Amount : ${card.amount}"></small>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                Uploaded by: <button class="hrefButton" th:onclick="'javascript : viewProfile(\'' + ${card.user.username} + '\',\''+ ${card.id} + '\');'"><small class="text-muted" th:text="${card.user.username}"></small></button></h6>
+                        <p class="card-text" th:text="${card.description}"></p>
+                        <p class="card-text"><small class="text-muted" th:text="|Updated on ${card.uploadedOn}"></small>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <small class="text-muted" th:text="|Status : ${card.status}"></small>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <!--<small class="text-muted"><button class="btn btn-md btn-info" th:onclick="'javascript : viewCard(\'' + ${card.filePath} +'\',\''+ ${card.user.username} + '\',\''+ ${card.id} + '\');'" >View card</button></small>-->
+                            <small class="text-muted"><button class="btn btn-md btn-info" th:onclick="'javascript : loadCard(\'' + ${card.user.username} + '\',\''+ ${card.id} + '\');'" >Load card</button></small>
+                            <!--<small class="text-muted"><button class="btn btn-md btn-info" th:onclick="'javascript : viewProfile(\'' + ${card.user.username} + '\',\''+ ${card.id} + '\');'" >Load card</button></small>-->
+                        </p>
+                    </div>
+                    <!--<img class="card-img-bottom" th:src="${card.filePath}" alt="Card image cap" />-->
+                    <!--<img class="card-img-bottom" src="#####">-->
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="verdeclineCardModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Card image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="verdecbody">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

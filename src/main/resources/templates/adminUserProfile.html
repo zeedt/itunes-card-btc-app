@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="modal-body">
+    <div id="tobePassedInput">
+
+    </div>
+    <div id="profile">
+        <table class="table table-bordered">
+            <tr>
+                <td class="tableLabel">First name</td>
+                <td th:text="${carduser.firstName}"></td>
+            </tr>
+            <tr>
+                <td class="tableLabel">Last name</td>
+                <td th:text="${carduser.lastName}"></td>
+            </tr>
+            <tr>
+                <td class="tableLabel">Username</td>
+                <td th:text="${carduser.username}"></td>
+            </tr>
+            <tr>
+                <td class="tableLabel">Email</td>
+                <td th:text="${carduser.email}"></td>
+            </tr>
+            <tr>
+                <td class="tableLabel">Gender</td>
+                <td th:text="${carduser.gender}"></td>
+            </tr>
+            <tr>
+                <td class="tableLabel">Bank name</td>
+                <td th:text="${carduser.bank}"></td>
+            </tr>
+            <tr>
+                <td class="tableLabel">Account number</td>
+                <td th:text="${carduser.accountNumber}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</html>

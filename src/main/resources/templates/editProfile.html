@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.js" />
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <script type="text/javascript" src="js/dashboardjs.js" />
+    <script type="text/javascript" src="js/updateProfile.js" />
+
+</head>
+<body>
+<div class="container" id="dashboardmarg">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">CardUpload</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/uploadCard">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/verified">Verified</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/declined">Declined</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/editProfile">Edit profile<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Notification</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/userlogout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-md-12" id="dashboardMargin">
+            <div class="col-lg-8 col-md-10 mx-auto" id="dashboardBody">
+                <h5 style="padding: 20px">Profile update</h5>
+                <div id="updateMessage">
+                </div>
+
+                <form method="post" action="javascript: callpasswordUpdate()" >
+                    <table class="table table-bordered">
+                        <tr>
+                            <td><label>Current password</label></td>
+                            <td><input type="password" class="form-control" name="oldpassword" id="oldpassword" />
+                                <span class="span"><small><p style="padding-left:10px" id="oldM"></p></small></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>New password</label></td>
+                            <td><input type="password" class="form-control" name="newpassword" id="newpassword" />
+                                <span class="span"><small><p style="padding-left:10px" id="newM"></p></small></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="hidden" id="passwordUpdateId" onclick="passwordUpdate(this.form)" /></td>
+                            <td><input value="update profile"  type="submit" class="btn btn-primary" /></td>
+                        </tr>
+                    </table>
+                </form>
+                <form method="post" action="javascript: calluserUpdate()" >
+                    <table class="table table-bordered">
+                        <tr>
+                            <td><label>First name</label></td>
+                            <td><input type="text" class="form-control" th:value="${user.firstName}" name="firstName" id="firstName" />
+                            <span class="span"><small><p style="padding-left:10px" id="firstM"></p></small></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Last name</label></td>
+                            <td><input type="text" class="form-control" th:value="${user.lastName}" name="lastName" id="lastName" />
+                            <span class="span"><small><p style="padding-left:10px" id="lastM"></p></small></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Email</label></td>
+                            <td><input type="text" class="form-control" th:value="${user.email}" name="email" id="email" />
+                            <span class="span"><small><p style="padding-left:10px" id="emailM"></p></small></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Gender</label></td>
+                            <td><select name="gender" class="form-control" id="gender" th:selected="${user.gender}">
+                                <option value="">--Select gender---</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                            <span class="span"><small><p style="padding-left:10px" id="genM"></p></small></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Bank</label></td>
+                            <td><select name="bank" class="form-control" id="bank" th:value="${user.bank}">
+                                <option value="">--Select bank---</option>
+                                <option value="GTB">GTB</option>
+                                <option value="ACCESS">ACCESS</option>
+                                <option value="FIRST">FIRST BANK</option>
+                                <option value="UBA">UBA</option>
+                                <option value="ZENITH">ZENITH</option>
+                            </select>
+                                <span class="span"><small><p style="padding-left:10px" id="bankM"></p></small></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Account number</label></td>
+                            <td><input type="text" class="form-control" th:value="${user.accountNumber}" name="accountNumber" id="accountNumber" />
+                                <span class="span"><small><p style="padding-left:10px" id="accountM"></p></small></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="hidden" id="userUpdateId" onclick="userUpdate(this.form)" /></td>
+                            <td><input value="update profile"  type="submit" class="btn btn-primary" /></td>
+                        </tr>
+                    </table>
+                </form>
+
+                <div class="card mb-3" th:each="card:${usercard}" id="cardMargin">
+                    <div class="card-block">
+                        <h6 class="card-title">Card description
+                            &nbsp;&nbsp;&nbsp;&nbsp;<small class="text-muted" th:text="|Amount : ${card.amount}"></small></h6>
+                        <p class="card-text" th:text="${card.description}"></p>
+                        <p class="card-text"><small class="text-muted" th:text="|DeclinedOn on ${card.verifiedOn}"></small>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <small class="text-muted"><button class="btn btn-md btn-info" th:onclick="'javascript : viewCard(\''+${card.filePath}+ '\');'" >View card</button></small>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <small class="text-muted"><button class="btn btn-md btn-info" th:onclick="'javascript : viewCardDecReason(\''+${card.declinedImage}+'\',\''+${card.comment}+ '\');'" >View decline reason</button></small></p>
+                    </div>
+                    <!--<img class="card-img-bottom" th:src="${card.filePath}" alt="Card image cap" />-->
+                    <!--<img class="card-img-bottom" src="#####">-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

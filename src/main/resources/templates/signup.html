@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.js" />
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0 2/css/font-awesome.min.css" />
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-8 col-md-8 mx-auto">
+        <div class="panel panel-default" id="loginContainer">
+            <div class="panel-heading" id="signupheader">
+                <h4>Card Upload Signup&nbsp;&nbsp;</h4> <a href="/">Login</a>
+            </div>
+            <div class="panel-body" id="signupbody">
+        <div id="message" class="row">
+
+        </div>
+        <form method="post" id="signupform" action="javascript: signup()" >
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-fs"></i></span>
+                <input name="firstname" class="form-control" placeholder="Enter firstname here" id="firstname" type="text" />
+            </div>
+            <span class="span"><small><p style="padding-left:10px" id="firstM"></p></small></span>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-fs"></i></span>
+                <input name="lastname" class="form-control " placeholder="Enter lastname here" id="lastname" type="text" />
+            </div>
+            <span class="span"><small><p style="padding-left:10px" id="lastM"></p></small></span>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa-fs"></i></span>
+                <input name="email" class="form-control " placeholder="Enter email address here" id="email" type="text" />
+            </div>
+            <span class="span"><small><p style="padding-left:10px" id="emailM"></p></small></span>
+            <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fs"></i></span>
+                    <input name="username" class="form-control" placeholder="Enter username here" id="username" type="text" />
+                </div>
+            <span class="span"><small><p style="padding-left:10px" id="userM"></p></small></span>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key fa-fs"></i></span>
+                <input name="password" class="form-control " placeholder="Enter password here" id="password" type="password" />
+            </div>
+            <span class="span"><small><p style="padding-left:10px"  id="passM"></p></small></span>
+            <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-male fa-fs"></i></span>
+                    <select name="gender" class="form-control" id="gender">
+                        <option value="">--Select gender---</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+            <span class="span"><small><p style="padding-left:10px" id="genM"></p></small></span>
+            <div class="input-group"  >
+                    <span class="input-group-addon"><i class="fa fa-bank fa-fs"></i></span>
+                    <select name="bank" class="form-control" id="bank">
+                        <option value="">--Select bank---</option>
+                        <option value="GTB">GTB</option>
+                        <option value="ACCESS">ACCESS</option>
+                        <option value="FIRST">FIRST BANK</option>
+                        <option value="UBA">UBA</option>
+                        <option value="ZENITH">ZENITH</option>
+                    </select>
+                </div>
+            <span class="span"><small><p style="padding-left:10px" id="bankM"></p></small></span>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-book fa-fs"></i></span>
+                <input name="accountNumber" class="form-control " placeholder="Enter accountNumber here" id="accountnumber" type="type" />
+            </div>
+            <span class="span"><small><p style="padding-left:10px" id="accountM"></p></small></span>
+            <input value="submit" class="btn btn-primary btn-md" type="submit" />
+            <input type="hidden" class="btn btn-primary btn-md" id="signUpUserId" onclick="signUpUser(this.form)" />
+        </form>
+            </div>
+            </div>
+        <div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="js/login.js"> </script>
+</body>
+</html>

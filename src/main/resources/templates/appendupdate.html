@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<div>
+    <div id="outerHold" style="display: none"><div id="lastFetched" th:text="${last}"></div></div>
+    <div class="card mb-3 cardMargin" th:each="card:${usercard}" >
+    <div class="card-block">
+        <h6 class="card-title">Card description
+            &nbsp;&nbsp;&nbsp;&nbsp;<small class="text-muted" th:text="|Amount : ${card.amount}"></small>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Uploaded by: <button class="hrefButton" th:onclick="'javascript : viewProfile(\'' + ${card.user.username} + '\',\''+ ${card.id} + '\');'"><small class="text-muted" th:text="${card.user.username}"></small></button></h6>
+        <p class="card-text" th:text="${card.description}"></p>
+        <p class="card-text"><small class="text-muted" th:text="|Updated on ${card.uploadedOn}"></small>&nbsp;&nbsp;&nbsp;&nbsp;
+            <small class="text-muted" th:text="|Status : ${card.status}"></small>&nbsp;&nbsp;&nbsp;&nbsp;
+            <small class="text-muted"><button class="btn btn-md btn-info" th:onclick="'javascript : loadCard(\'' + ${card.user.username} + '\',\''+ ${card.id} + '\');'" >Load card</button></small>
+        </p>
+    </div>
+</div>
+</div>
+</html>

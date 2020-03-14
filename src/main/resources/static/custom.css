@@ -1,0 +1,92 @@
+#loginContainer  {
+    padding-top : 10%
+}
+#signupContainer  {
+    padding-top : 10%
+}
+#uploadpad  {
+    margin-top : 15px
+}
+#dashboardmarg  {
+    margin-top : 15px
+}
+#uploadpadMargin  {
+    margin-top: 10px;
+}
+#dashboardMargin  {
+    margin-top: 10px;
+}
+#signupheader {
+    padding:10px;background-color:#e8e8e8
+}
+#signupbody {
+    padding:10px;background-color:#e8e8e8
+}
+#signinheader {
+    padding:10px;background-color:#e8e8e8
+}
+#signinbody {
+    padding:10px;background-color:#e8e8e8
+}
+#uploadFormBody {
+    padding:30px;background-color:#e8e8e8
+}
+#dashboardBody {
+    padding:0px;
+    background-color:#e8e8e8
+}
+#cardMargin {
+    /*padding:20px;*/
+}
+#declineBox {
+    margin-top:10px;
+}
+#message {
+    padding-left: 20px;
+    color : #5cb3fd;
+}
+#declineMessage {
+    margin-bottom: 10px;
+    color : green;
+}
+#admdeclineMessage {
+    margin-bottom: 10px;
+    color : green;
+}
+#decResCardImg {
+    margin-bottom: 10px;
+    color : red;
+}
+.span {
+    color: red;
+}
+.tableLabel {
+    font-weight: bold;
+}
+.hrefButton {
+    background-color: white;
+    border: 0px;
+}
+#dashboardMargin2 {
+    margin-top: 15px;
+}
+#dashboardBody2 {
+    margin: 20px;
+    padding-bottom: 20px;
+    background-color:#e8e8e8
+}
+#updateMessage {
+    padding-left : 20px;
+}
+.table td, .table th {
+    padding-left: .75rem !important;
+    padding-right: .75rem !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.input-group {
+    /*padding-bottom:  20px;*/
+}
+body {
+    background-color: slategrey;
+}

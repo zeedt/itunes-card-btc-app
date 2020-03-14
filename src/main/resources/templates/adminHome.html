@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.js" />
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0 2/css/font-awesome.min.css" />
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 mx-auto">
+            <div class="panel panel-default" id="loginContainer">
+                <div class="panel-heading" id="signinheader">
+                    <h3>Admin Login</h3>
+                </div>
+                <div class="panel-body" id="signinbody">
+                    <div id="message">
+
+                    </div>
+                    <form method="post" action="javascript: adminsubmit()" >
+                        <div class="input-group" style="padding-bottom: 20px">
+                            <span class="input-group-addon"><i class="fa fa-user fa-fs"></i></span>
+                            <input name="username" class="form-control" placeholder="Enter username here" id="username" type="text" />
+                        </div>
+                        <div class="input-group" style="padding-bottom: 20px">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fs"></i></span>
+                            <input name="password" class="form-control" placeholder="Enter password here" id="password" type="password" />
+                        </div>
+                        <input value="submit"  type="submit" class="btn btn-primary" />
+                        <input type="hidden" id="validateAdminUserId" onclick="validateAdminUser(this.form)" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/login.js"> </script>
+</body>
+
+
+</html>

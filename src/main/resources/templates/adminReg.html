@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <script type="text/javascript" src="jquery.js" />
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="custom.css" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 col-md-6 mx-auto">
+            <div class="panel panel-default" id="loginContainer">
+                <div class="panel-heading" id="signupheader">
+                    <h4>Admin Signup&nbsp;&nbsp;</h4> <a href="/adminHome">Login</a>
+                </div>
+                <div class="panel-body" id="signupbody">
+                    <div id="message" class="row">
+
+                    </div>
+                    <form method="post" id="signupform" action="javascript: adminSignup()" >
+                        <div class="form-group">
+                            <input name="firstname" class="form-control" placeholder="Enter firstname here" id="firstname" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <input name="lastname" class="form-control " placeholder="Enter lastname here" id="lastname" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <input name="username" class="form-control" placeholder="Enter username here" id="username" type="text" />
+                        </div>
+                        <div class="form-group">
+                            <input name="password" class="form-control " placeholder="Enter password here" id="password" type="password" />
+                        </div>
+                        <div class="form-group"  >
+                            <select name="gender" class="form-control" id="gender">
+                                <option value="">--Select gender---</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                        </div>
+                        <input value="submit" class="btn btn-primary btn-md" type="submit" />
+                        <input type="hidden" class="btn btn-primary btn-md" id="signUpAdminUserId" onclick="signAdminUpUser(this.form)" />
+                    </form>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/login.js"> </script>
+</body>
+</html>
